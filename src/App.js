@@ -1,10 +1,23 @@
 import React from "react";
+import { useState } from "react";
 
 import BookList from "./components/BookList";
 import NavBar from "./components/NavBar";
+import AddBookPopUp from "./components/AddBookPopUp"
+
 import "./styles.css";
 
 export default function App() {
+  const [isAddBookPopUpOpen, setIsAddBookPopUpOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsAddBookPopUpOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsAddBookPopUpOpen(false)
+  }
+
   return (
     <div className="App">
       <NavBar />
@@ -20,9 +33,13 @@ export default function App() {
             </select>
           </label>
         </div>
-        <button className="lib__btn">Add</button>
+        <button
+          className="lib__btn"
+          onClick={handleOpen}
+        >Add</button>
       </div>
       <BookList />
+      {isAddBookPopUpOpen && <AddBookPopUp onClose={handleClose} />}
     </div>
   );
 }
