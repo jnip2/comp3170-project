@@ -1,3 +1,3 @@
 ## dependencies
 
--- npm i react-star-rating-component
+-- npm install @mui/material @emotion/react @emotion/styled

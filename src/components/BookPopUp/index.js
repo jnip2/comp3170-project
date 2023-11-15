@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BookImage from './book.png';
-import StarRatingComponent from 'react-star-rating-component';
+import Rating from '@mui/material/Rating';
 
 const BookPopup = ({ book }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +8,6 @@ const BookPopup = ({ book }) => {
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
-  };
-
-  const onStarClick = (nextValue, prevValue, name) => {
-    setRating(nextValue);
   };
 
   return (
@@ -27,12 +23,7 @@ const BookPopup = ({ book }) => {
               <div className="popup-left">
                 <img className="book-image" src={BookImage} alt="Title" />
                 <div className="stars-feature">
-                  <StarRatingComponent
-                    name="bookRating"
-                    starCount={5}
-                    value={rating}
-                    onStarClick={onStarClick}
-                  />
+                  <Rating name="size-small" defaultValue={2} size="small" />
                 </div>
               </div>
               <div className="popup-right">
@@ -66,8 +57,8 @@ const BookPopup = ({ book }) => {
           background: #fff;
           padding: 20px;
           text-align: center;
-          max-width: 500px; 
-          width: 80%; 
+          max-width: 500px;
+          width: 80%;
           position: relative;
         }
 
@@ -98,7 +89,7 @@ const BookPopup = ({ book }) => {
         }
 
         .book-image {
-          max-width: 200px; 
+          max-width: 200px;
           height: auto;
           margin-right: 10px;
         }
