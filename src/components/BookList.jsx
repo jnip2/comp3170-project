@@ -1,0 +1,36 @@
+import React from 'react'
+import BookCard from './BookCard'
+
+import '../styles.css'
+
+// Will replace with a map function later
+export default function BookList() {
+  return (
+    <div className='list__container'>
+        <div className='list__row'>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+        </div>
+        <div className='list__row'>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+        </div>
+        <div className='list__row'>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>            
+        </div>
+        <div className='list__row'>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+            <BookCard title='Book Title' author='Author Name'/>
+        </div>
+    </div>
+  )
+}
