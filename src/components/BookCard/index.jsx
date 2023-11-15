@@ -114,7 +114,6 @@ export default function BookCard ({
 };
 
 
-export default BookPopup;
 
 
 
