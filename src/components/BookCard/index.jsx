@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import BookImage from './book.png';
-import StarRatingComponent from 'react-star-rating-component';
 
 export default function BookCard ({
   book,
@@ -38,12 +37,7 @@ export default function BookCard ({
               <div className="popup-left">
                 <img className="book-image" src={BookImage} alt="Title" />
                 <div className="stars-feature">
-                  <StarRatingComponent
-                    name="bookRating"
-                    starCount={5}
-                    value={rating}
-                    onStarClick={onStarClick}
-                  />
+
                 </div>
               </div>
               <div className="popup-right">
