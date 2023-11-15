@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import BookImage from './book.png';
+import Rating from '@mui/material/Rating';
+
 
 export default function BookCard ({
   book,
@@ -37,7 +39,7 @@ export default function BookCard ({
               <div className="popup-left">
                 <img className="book-image" src={BookImage} alt="Title" />
                 <div className="stars-feature">
-
+                  <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                 </div>
               </div>
               <div className="popup-right">
