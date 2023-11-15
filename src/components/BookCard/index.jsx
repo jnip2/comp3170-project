@@ -2,8 +2,11 @@ import { useState } from 'react';
 import BookImage from './book.png';
 import Rating from '@mui/material/Rating';
 
-
-const BookPopup = ({ book }) => {
+export default function BookCard ({
+  book,
+  title="",
+  author=""
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(1);
 
@@ -13,7 +16,14 @@ const BookPopup = ({ book }) => {
 
   return (
     <div>
-      <button onClick={togglePopup}>Open Book Popup</button>
+      {/* Book Card */}
+      <div className='card__container' onClick={togglePopup}>
+        <div className='card__img'></div>
+        <h3 className='card__title'>{title}</h3>
+        <p className='card__author'>By: {author}</p>
+      </div>
+
+      {/* Book Popup */}
       {isOpen && (
         <div className="popup">
           <div className="popup-inner">
@@ -24,7 +34,7 @@ const BookPopup = ({ book }) => {
               <div className="popup-left">
                 <img className="book-image" src={BookImage} alt="Title" />
                 <div className="stars-feature">
-                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                  <Rating name="size-small" defaultValue={2} size="small" />
                 </div>
               </div>
               <div className="popup-right">
@@ -32,7 +42,7 @@ const BookPopup = ({ book }) => {
                   <h2 style={{ margin: 0 }}>Title</h2>
                   <p>Author:</p>
                   <p>
-                  Lorem ipsum dolor sit amet consectetur. Scelerisque adipiscing mattis eu eget porttitor risus. Fermentum lorem adipiscing a et adipiscing tortor sodales vel at. Eu rhoncus commodo viverra ornare fermentum. Blandit velit nulla nunc id vel in lectus. Diam est nunc tristique malesuada sem feugiat eu. Bibendum malesuada dignissim dictumst velit ante vel risus metus aenean. 
+                    Lorem ipsum dolor sit amet consectetur. Scelerisque adipiscing mattis eu eget porttitor risus. Fermentum lorem adipiscing a et adipiscing tortor sodales vel at. Eu rhoncus commodo viverra ornare fermentum. Blandit velit nulla nunc id vel in lectus. Diam est nunc tristique malesuada sem feugiat eu. Bibendum malesuada dignissim dictumst velit ante vel risus metus aenean.
                   </p>
                 </div>
               </div>
@@ -103,5 +113,8 @@ const BookPopup = ({ book }) => {
   );
 };
 
+
 export default BookPopup;
+
+
 
