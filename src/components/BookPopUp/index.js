@@ -66,8 +66,8 @@ const BookPopup = ({ book }) => {
           background: #fff;
           padding: 20px;
           text-align: center;
-          max-width: 500px; /* Adjust the width as needed */
-          width: 80%; /* Adjust the width as needed */
+          max-width: 500px; 
+          width: 80%; 
           position: relative;
         }
 
@@ -98,7 +98,7 @@ const BookPopup = ({ book }) => {
         }
 
         .book-image {
-          max-width: 200px; /* Adjust the size as needed */
+          max-width: 200px; 
           height: auto;
           margin-right: 10px;
         }
