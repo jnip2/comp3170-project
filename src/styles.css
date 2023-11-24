@@ -4,11 +4,12 @@
   --federal-blue: #031a6b;
   --dark-moss-green: #3f612d;
   --raisin-black: #3a2d32;
+  --white: #FFFFFF;
 }
 
 body {
   margin: 0;
-  background-color: var(--khaki);
+  background-color: var(--white);
 }
 
 .App {
@@ -27,7 +28,8 @@ body {
 .list__row {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
+  align-items: center;
 }
 
 .card__container {
@@ -68,9 +70,9 @@ body {
 }
 
 .menu__bar {
-  width: 70px;
-  height: 10px;
-  background-color: var(--van-dyke);
+  width: 50px;
+  height: 5px;
+  background-color: var(--white);
   border-radius: 10px;
 }
 
@@ -81,7 +83,7 @@ body {
   padding-left: 50px;
   padding-right: 50px;
   background-color: var(--dark-moss-green);
-  color: var(--raisin-black);
+  color: var(--white);
   position: sticky;
   top: 0;
   z-index: 2;
