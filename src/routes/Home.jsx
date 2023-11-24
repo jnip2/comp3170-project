@@ -1,14 +1,24 @@
 import React from "react"
+import { useState } from "react"
 
 import BookList from "../components/BookList"
 import NavBar from "../components/NavBar"
+import AddBookPopUp from "../components/AddBookPopUp"
 
 import '../styles.css'
 
 export default function Home() {
+    const [isAddBookPopUpOpen, setIsAddBookPopUpOpen] = useState(false);
+
+    const handleOpen = () => {
+        setIsAddBookPopUpOpen(true)
+    }
+
+    const handleClose = () => {
+        setIsAddBookPopUpOpen(false)
+    }
     return (
-        <div>
-            <NavBar />
+        <>
             <div className="lib__container">
                 <div className="lib__sort">
                     <h3 className="lib__sort_title">Library</h3>
@@ -21,9 +31,13 @@ export default function Home() {
                         </select>
                     </label>
                 </div>
-                <button className="lib__btn">Add</button>
+                <button
+                    className="lib__btn"
+                    onClick={handleOpen}
+                >Add</button>
             </div>
             <BookList />
-        </div>
+            {isAddBookPopUpOpen && <AddBookPopUp onClose={handleClose} />}
+        </>
     )
 }
