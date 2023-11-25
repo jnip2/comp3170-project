@@ -5,11 +5,12 @@ import Rating from '@mui/material/Rating';
 
 export default function BookCard ({
   book,
-  title="",
-  author=""
+  remove={},
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(1);
+
+  const books = book;
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -19,13 +20,18 @@ export default function BookCard ({
     setRating(nextValue);
   };
 
+  const handleDelete = () => {
+    remove(book);
+  }
+
   return (
     <div>
       {/* Book Card */}
       <div className='card__container' onClick={togglePopup}>
         <div className='card__img'></div>
-        <h3 className='card__title'>{title}</h3>
-        <p className='card__author'>By: {author}</p>
+        <h3 className='card__title'>{books.title}</h3>
+        <p className='card__author'>By: {books.author}</p>
+        <button onClick={handleDelete}>Delete</button>
       </div>
 
       {/* Book Popup */}

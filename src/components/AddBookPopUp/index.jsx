@@ -1,27 +1,64 @@
 import CloseIcon from '@mui/icons-material/Close';
+
+import { nanoid } from 'nanoid';
 import { useState } from 'react';
 
-export default function AddBookPopUp({ onClose }) {
+export default function AddBookPopUp({ 
+    onClose,
+    addBook={},
+}) {
+    const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [genre, setGenre] = useState("");
 
+    const handleTitle = (event) => {
+        setTitle(event.target.value);
+    }
+
+    const handleAuthor = (event) => {
+        setAuthor(event.target.value);
+    }
+
+    const handleGenre = (event) => {
+        setGenre(event.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        
+        const newBook = {
+            title,
+            author,
+            genre,
+            id: nanoid()
+        }
+
+        addBook(newBook);
+
+        setTitle("");
+        setAuthor("");
+        setGenre("");
+        onClose();
+    }
     return (
         <>
-            <div style={styles.popUpBg} onClick={onClose}>
+            <div style={styles.popUpBg}>
                 <div style={styles.popUpContainer}>
                     <div style={styles.container}>
                         <div style={{ display: 'flex' }}>
-                            <form style={styles.formContainer}>
+                            <form style={styles.formContainer} onSubmit={handleSubmit}>
                                 <div style={styles.inputContainer}>
                                     <label style={styles.labelContainer}>
                                         Title
-                                        <input style={styles.inputBox} type='text' />
+                                        <input style={styles.inputBox} type='text' onChange={handleTitle} value={title}/>
                                     </label>
                                     <label style={styles.labelContainer}>
                                         Author
-                                        <input style={styles.inputBox} type='text' />
+                                        <input style={styles.inputBox} type='text' onChange={handleAuthor} value={author}/>
                                     </label>
                                     <label style={styles.labelContainer}>
                                         Genre
-                                        <input style={styles.inputBox} type='text' />
+                                        <input style={styles.inputBox} type='text' onChange={handleGenre} value={genre}/>
                                     </label>
                                 </div>
                                 <div style={styles.buttonContainer}>
@@ -35,7 +72,6 @@ export default function AddBookPopUp({ onClose }) {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
