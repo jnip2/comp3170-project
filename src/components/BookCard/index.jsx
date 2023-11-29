@@ -31,7 +31,7 @@ export default function BookCard ({
         <div className='card__img'></div>
         <h3 className='card__title'>{books.title}</h3>
         <p className='card__author'>By: {books.author}</p>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete} className='del__btn'>Delete</button>
       </div>
 
       {/* Book Popup */}
