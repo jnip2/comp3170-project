@@ -114,5 +114,34 @@ body {
 }
 
 .lib__btn {
-  width: 100px
+  width: 100px;
+  background-color: var(--raisin-black);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--khaki);
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 200ms;
+}
+
+.libs__btn:hover {
+  background-color: var(--van-dyke);
+  cursor: pointer;
+}
+
+.del__btn {
+  background-color: var(--raisin-black);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--khaki);
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 200ms;
+}
+
+.del__btn:hover {
+  background-color: var(--van-dyke);
+  cursor: pointer;
 }
