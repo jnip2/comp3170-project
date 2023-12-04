@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import BookImage from './book.png';
 import Rating from '@mui/material/Rating';
 
+import { BookContext } from '../../context/BookContext';
 
 export default function BookCard ({
   book,
-  remove={},
 }) {
+  const { removeBook, updateBook, editing, setEditing} = useContext(BookContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(1);
-
-  const books = book;
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -20,18 +20,15 @@ export default function BookCard ({
     setRating(nextValue);
   };
 
-  const handleDelete = () => {
-    remove(book);
-  }
-
   return (
     <div>
       {/* Book Card */}
       <div className='card__container' onClick={togglePopup}>
         <div className='card__img'></div>
-        <h3 className='card__title'>{books.title}</h3>
-        <p className='card__author'>By: {books.author}</p>
-        <button onClick={handleDelete} className='del__btn'>Delete</button>
+        <h3 className='card__title'>{book.title}</h3>
+        <p className='card__author'>By: {book.author}</p>
+        <button onClick={() => setEditing(book.id)} className='edit__btn'>Edit</button>
+        <button onClick={() => removeBook(book)} className='del__btn'>Delete</button>
       </div>
 
       {/* Book Popup */}

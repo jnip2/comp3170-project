@@ -1,26 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import BookCard from './BookCard';
 import AddBookPopUp from './AddBookPopUp';
 
 import '../styles.css'
 
-// Will replace with a map function later
+import { BookContext } from '../context/BookContext';
+
 export default function BookList() {
+    const { addBook, updateBook, editing, setEditing, books } = useContext(BookContext);
+    
     const [isPopupOpen, setIsPopupOpen] = useState(false)
 
-    const [books, setBooks] = useState([]);
-
-    const addBook = (book) => {
-        setBooks([...books, book]);
-    }
-
-    const removeBook = (b) => {
-        const updatedBooks = books.filter((book) => {
-            return book.id !== b.id;
-        })
-
-        setBooks(updatedBooks);
-    }
     return (
         <div className='book__list'>
             <div className="lib__container">
@@ -37,7 +27,7 @@ export default function BookList() {
                 </div>
                 <button
                     className="lib__btn"
-                    onClick={() => setIsPopupOpen(true)}
+                    onClick={() => setEditing("new")}
                 >Add</button>
             </div>
             <div className='list__container'>
@@ -47,13 +37,12 @@ export default function BookList() {
                             <BookCard
                                 key={book.id}
                                 book={book}
-                                remove={removeBook}
                             />
                         )
                     })
                 }
             </div>
-            {isPopupOpen && <AddBookPopUp onClose={() => setIsPopupOpen(false)} addBook={addBook} />}
+            { editing && <AddBookPopUp onClose={() => setIsPopupOpen(false)} /> }
         </div>
     )
 }
