@@ -1,43 +1,45 @@
 import CloseIcon from '@mui/icons-material/Close';
 
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+import { BookContext } from '../../context/BookContext';
 
 export default function AddBookPopUp({ 
     onClose,
-    addBook={},
 }) {
-    const [title, setTitle] = useState("");
-    const [author, setAuthor] = useState("");
-    const [genre, setGenre] = useState("");
+    const { addBook, updateBook, editing, setEditing, books } = useContext(BookContext);
 
-    const handleTitle = (event) => {
-        setTitle(event.target.value);
+    let initialData = {
+        title: "",
+        author: "",
+        genre: "",
     }
 
-    const handleAuthor = (event) => {
-        setAuthor(event.target.value);
+    if( editing !== "new") {
+        initialData = books.find((b) => {
+            return b.id === editing;
+        })
     }
 
-    const handleGenre = (event) => {
-        setGenre(event.target.value);
+    const [book, setBook] = useState(initialData)
+
+    const handleInput = (event, field) => {
+        setBook({ ... book, [field]: event.target.value });
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        const newBook = {
-            title,
-            author,
-            genre,
-            id: nanoid()
+        if(editing === "new") {
+            addBook({
+                ...book,
+                id: nanoid(),
+            })
+        } else {
+            updateBook(book)
         }
 
-        addBook(newBook);
-
-        setTitle("");
-        setAuthor("");
-        setGenre("");
         onClose();
     }
     return (
@@ -50,15 +52,15 @@ export default function AddBookPopUp({
                                 <div style={styles.inputContainer}>
                                     <label style={styles.labelContainer}>
                                         Title
-                                        <input style={styles.inputBox} type='text' onChange={handleTitle} value={title}/>
+                                        <input style={styles.inputBox} type='text' onChange={(e) => handleInput(e, "title")} value={book.title}/>
                                     </label>
                                     <label style={styles.labelContainer}>
                                         Author
-                                        <input style={styles.inputBox} type='text' onChange={handleAuthor} value={author}/>
+                                        <input style={styles.inputBox} type='text' onChange={(e) => handleInput(e, "author")} value={book.author}/>
                                     </label>
                                     <label style={styles.labelContainer}>
                                         Genre
-                                        <input style={styles.inputBox} type='text' onChange={handleGenre} value={genre}/>
+                                        <input style={styles.inputBox} type='text' onChange={(e) => handleInput(e, "genre")} value={book.genre}/>
                                     </label>
                                 </div>
                                 <div style={styles.buttonContainer}>
