@@ -47,26 +47,41 @@ body {
 
 .card__container:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .card__img {
   width: 200px;
   height: 275px;
-  background-color: var(--federal-blue);
-  border-radius: 10px;
+  background-color: var(--van-dyke);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card__title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--raisin-black);
+  padding: 15px;
+  width: 70%;
+  border-radius: 5px;
 }
 
 .card__title {
-  margin: 10px;
-  color: var(--raisin-black);
+  color: var(--khaki);
+  margin-top: 0;
   width: 100%;
 }
 
 .card__author {
   margin: 0;
-  color: var(--raisin-black);
+  color: var(--khaki);
   width: 100%;
-  text-align: left;
 }
 
 .menu__container {
@@ -130,21 +145,46 @@ body {
   cursor: pointer;
 }
 
-.del__btn {
-  background-color: var(--raisin-black);
+.card__btn_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit__btn {
+  background-color: var(--khaki);
   border: none;
   padding: 10px;
-  border-radius: 10px;
-  color: var(--khaki);
+  border-radius: 50px;
+  color: var(--raisin-black);
   font-size: 16px;
   margin-top: 10px;
   transition: 200ms;
+  width: 100px;
+}
+
+.edit__btn:hover {
+  background-color: var(--van-dyke);
+  color: var(--khaki);
+  cursor: pointer;
+}
+
+.del__btn {
+  background-color: var(--khaki);
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  color: var(--raisin-black);
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 200ms;
+  width: 100px;
 }
 
 .del__btn:hover {
   background-color: var(--van-dyke);
+  color: var(--khaki);
   cursor: pointer;
-  width: 100px
 }
 
 .menu__container {
@@ -186,4 +226,88 @@ body {
 
 .horizontal__nav.open {
   left: 0;
+}
+
+/* Pop up Styling */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--khaki);
+  color: var(--raisin-black);
+  padding: 20px;
+  max-width: 700px; 
+  max-height: 500px;
+  width: 100%; 
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.book-info {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-left {
+  flex: 1;
+  text-align: left;
+}
+
+.popup-right {
+  flex: 1;
+  text-align: left;
+}
+
+.book-image {
+  max-width: 200px; 
+  height: auto;
+  margin-right: 10px;
+}
+
+.stars-feature {
+  margin-top: 10px;
+}
+
+.move__btn {
+  background-color: var(--raisin-black);
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  color: var(--khaki);
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 200ms;
+  width: 500px;
+}
+
+.move__btn:hover {
+  background-color: var(--van-dyke);
+  color: var(--khaki);
+  cursor: pointer;
 }

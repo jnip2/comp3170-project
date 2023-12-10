@@ -42,7 +42,7 @@ export default function BookList() {
                     })
                 }
             </div>
-            { editing && <AddBookPopUp onClose={() => setIsPopupOpen(false)} /> }
+            { editing && <AddBookPopUp onClose={() => setEditing(null)}/> }
         </div>
     )
 }
