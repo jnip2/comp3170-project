@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { nanoid } from 'nanoid';
 import { useState, useContext } from 'react';
 
-import { BookContext } from '../../context/BookContext';
+import { BookContext } from '../context/BookContext';
 
 export default function AddBookPopUp({ 
     onClose,
@@ -14,6 +14,7 @@ export default function AddBookPopUp({
         title: "",
         author: "",
         genre: "",
+        desc: "",
     }
 
     if( editing !== "new") {
@@ -39,9 +40,8 @@ export default function AddBookPopUp({
         } else {
             updateBook(book)
         }
-
-        onClose();
     }
+    
     return (
         <>
             <div style={styles.popUpBg}>
@@ -62,9 +62,13 @@ export default function AddBookPopUp({
                                         Genre
                                         <input style={styles.inputBox} type='text' onChange={(e) => handleInput(e, "genre")} value={book.genre}/>
                                     </label>
+                                    <label style={styles.labelContainer}>
+                                        Description
+                                        <input style={styles.inputBox} type='text' onChange={(e) => handleInput(e, "desc")} value={book.desc}/>
+                                    </label>
                                 </div>
                                 <div style={styles.buttonContainer}>
-                                    <button type='submit' style={{ width: 285, height: 50 }}>Add to Library</button>
+                                    <button type='submit' style={{ width: 285, height: 50 }}>{editing !== "new" ? "Update Book" : "Add to Library"}</button>
                                 </div>
                             </form>
                         </div>
