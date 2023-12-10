@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const SearchBooks = () => {
-  const [query, setQuery] = useState('');
-  const [books, setBooks] = useState([]);
-}
 
 export default function SearchBooks() {
+  const [query, setQuery] = useState('');
+  const [books, setBooks] = useState([]);
 
   const searchBooks = async () => {
     try {
