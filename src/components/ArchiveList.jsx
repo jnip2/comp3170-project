@@ -13,25 +13,25 @@ export default function ArchiveList() {
 
     return (
         <div className='list__container'>
-            <div className='list__row'>
+            <div style={styles.list__row}>
                 <ArchiveCard title='Book Title' author='Author Name' func={togglePopup} />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
             </div>
-            <div className='list__row'>
+            <div style={styles.list__row}>
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
             </div>
-            <div className='list__row'>
+            <div style={styles.list__row}>
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
             </div>
-            <div className='list__row'>
+            <div style={styles.list__row}>
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
                 <ArchiveCard title='Book Title' author='Author Name' />
@@ -39,4 +39,10 @@ export default function ArchiveList() {
             </div>
         </div>
     )
+}
+
+const styles = {
+    list__row: {
+        paddingLeft: 3,
+    }
 }

@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import BookImage from './book.png';
+// import BookImage from './book.png';
 import Rating from '@mui/material/Rating';
+import { useState, useEffect } from 'react';
 
 
-export default function ArchiveCard ({
-  book,
-  title="",
-  author=""
-}) {
+export default function ArchiveCard({ book, title="", author="" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(1);
+  const [bookImageUrl, setBookImageUrl] = useState('');
 
+  useEffect(() => {
+    if (isOpen) {
+      setBookImageUrl(`https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`);
+    }
+  }, [isOpen]);
+  
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
@@ -37,7 +40,8 @@ export default function ArchiveCard ({
             </button>
             <div className="book-info">
               <div className="popup-left">
-                <img className="book-image" src={BookImage} alt="Title" />
+              <img className="book-image" src={bookImageUrl} alt="Book Cover" />
+                {/* <img className="book-image" src={BookImage} alt="Title" /> */}
                 <div className="stars-feature">
                   <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                 </div>
