@@ -44,5 +44,6 @@ export default function BookList() {
             </div>
             { editing && <AddBookPopUp onClose={() => setEditing(null)}/> }
         </div>
+        
     )
 }

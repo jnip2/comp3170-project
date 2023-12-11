@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import BookImage from './book.png';
+import BookImage from './pj3.jpg';
 import Rating from '@mui/material/Rating';
 
 
-export default function ArchiveCard ({
+export default function ArchiveCard3 ({
   book,
   title="",
   author=""
@@ -44,10 +44,12 @@ export default function ArchiveCard ({
               </div>
               <div className="popup-right">
                 <div className="info">
-                  <h2 style={{ margin: 0 }}>Title</h2>
-                  <p>Author:</p>
+                  <h2 style={{ margin: 0 }}>Percy Jackson: The Titan's Curse</h2>
+                  <p>Author: Rick Riordan</p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Scelerisque adipiscing mattis eu eget porttitor risus. Fermentum lorem adipiscing a et adipiscing tortor sodales vel at. Eu rhoncus commodo viverra ornare fermentum. Blandit velit nulla nunc id vel in lectus. Diam est nunc tristique malesuada sem feugiat eu. Bibendum malesuada dignissim dictumst velit ante vel risus metus aenean.
+                  When Percy Jackson gets an urgent distress call from his friend Grover, he immediately prepares for battle. He knows he will need his powerful demigod allies at his side, his trusty bronze sword Riptide, and… a ride from his mom.
+                  The demigods rush to the rescue to find that Grover has made an important discovery: two powerful half-bloods whose parentage is unknown. But that’s not all that awaits them. The titan lord Kronos has devised his most treacherous plot yet, and the young heroes have just fallen prey.
+                  They’re not the only ones in danger. 
                   </p>
                 </div>
               </div>

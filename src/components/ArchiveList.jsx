@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import ArchiveCard from './ArchiveCard';
+import ArchiveCard from './ArchiveCard1';
+import ArchiveCard2 from './ArchiveCard2';
+import ArchiveCard3 from './ArchiveCard3';
+import ArchiveCard4 from './ArchiveCard4';
 
 import '../styles.css'
 
@@ -12,31 +15,19 @@ export default function ArchiveList() {
     };
 
     return (
-        <div className='list__container'>
+        <div style={styles.list__row}>
             <div className='list__row'>
-                <ArchiveCard title='Book Title' author='Author Name' func={togglePopup} />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-            </div>
-            <div className='list__row'>
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-            </div>
-            <div className='list__row'>
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-            </div>
-            <div className='list__row'>
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
-                <ArchiveCard title='Book Title' author='Author Name' />
+                <ArchiveCard title='The Lightning Thief' author='Rick Riordan' func={togglePopup} />
+                <ArchiveCard2 title='The Sea of Monsters' author='Rick Riordan' />
+                <ArchiveCard3 title='The Titans Curse' author='Rick Riordan' />
+                <ArchiveCard4 title='The Battle of the Labyrinth' author='Rick Riordan' />
             </div>
         </div>
     )
+}
+
+const styles = {
+    list__row: {
+        paddingLeft: 3,
+    }
 }
