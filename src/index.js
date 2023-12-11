@@ -10,7 +10,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <SearchBooks />
     <App />
   </StrictMode>
 );
