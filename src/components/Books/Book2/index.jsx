@@ -56,6 +56,7 @@ export default function Book2({
                 </div>
               </div>
             </div>
+            <button className='move__btn' onClick={togglePopup}>Move to Library Archive</button>
           </div>
         </div>
       )}
