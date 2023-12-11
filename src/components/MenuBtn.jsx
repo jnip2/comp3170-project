@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';  // useNavigate replaces useHistory in v6
 import '../styles.css';
 
 export default function MenuBtn() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const navigate = useNavigate(); // useNavigate replaces useHistory in v6
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
+  };
+
+  const handleLibraryArchiveClick = () => {
+    navigate('./archive');
+  };
+
+  const handleLibraryClick = () => {
+    navigate('.');
   };
 
   useEffect(() => {
@@ -31,7 +41,8 @@ export default function MenuBtn() {
       </div>
 
       <div className={`horizontal__nav ${isNavOpen ? 'open' : ''}`}>
-        <p>Library Archive</p>
+        <p onClick={handleLibraryArchiveClick}>Library Archive</p>
+        <p onClick={handleLibraryClick}>Library</p>
       </div>
     </div>
   );
