@@ -3,10 +3,10 @@ import BookImage from './pj4.jpg';
 import Rating from '@mui/material/Rating';
 
 
-export default function ArchiveCard4 ({
+export default function ArchiveCard4({
   book,
-  title="",
-  author=""
+  title = "",
+  author = ""
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(1);
@@ -23,7 +23,7 @@ export default function ArchiveCard4 ({
     <div>
       {/* Book Card */}
       <div className='card__container' onClick={togglePopup}>
-        <div className='card__img'></div>
+      <img className="book-image" src={BookImage} alt="Title" />
         <h3 className='card__title'>{title}</h3>
         <p className='card__author'>By: {author}</p>
       </div>
@@ -47,8 +47,8 @@ export default function ArchiveCard4 ({
                   <h2 style={{ margin: 0 }}>Percy Jackson: The Battle of the Labyrinth</h2>
                   <p>Author: Rick Riordan</p>
                   <p>
-                  Percy Jackson isn’t expecting freshman orientation to be any fun, but when a mysterious mortal acquaintance appears, pursued by demon cheerleaders, things quickly go from bad to worse.
-                  Time is running out for Percy. War between the gods and the Titans is drawing near. Even Camp Half-Blood isn’t safe, as Kronos’ army prepares to invade its once impenetrable borders. To stop them, Percy and his friends must set out on a quest through the Labyrinth — a sprawling underground world with surprises and danger at every turn.
+                    Percy Jackson isn’t expecting freshman orientation to be any fun, but when a mysterious mortal acquaintance appears, pursued by demon cheerleaders, things quickly go from bad to worse.
+                    Time is running out for Percy. War between the gods and the Titans is drawing near. Even Camp Half-Blood isn’t safe, as Kronos’ army prepares to invade its once impenetrable borders. To stop them, Percy and his friends must set out on a quest through the Labyrinth — a sprawling underground world with surprises and danger at every turn.
                   </p>
                 </div>
               </div>
@@ -57,64 +57,6 @@ export default function ArchiveCard4 ({
           </div>
         </div>
       )}
-      <style jsx>{`
-        .popup {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.7);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .popup-inner {
-          background: #fff;
-          padding: 20px;
-          text-align: center;
-          max-width: 500px; 
-          width: 80%; 
-          position: relative;
-        }
-
-        .close-button {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 20px;
-          cursor: pointer;
-          border: none;
-          background: none;
-        }
-
-        .book-info {
-          text-align: left;
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .popup-left {
-          flex: 1;
-          text-align: left;
-        }
-
-        .popup-right {
-          flex: 1;
-          text-align: left;
-        }
-
-        .book-image {
-          max-width: 200px; 
-          height: auto;
-          margin-right: 10px;
-        }
-
-        .stars-feature {
-          margin-top: 10px;
-        }
-      `}</style>
     </div>
   );
 };

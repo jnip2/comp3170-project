@@ -23,7 +23,7 @@ export default function ArchiveCard2 ({
     <div>
       {/* Book Card */}
       <div className='card__container' onClick={togglePopup}>
-        <div className='card__img'></div>
+      <img className="book-image" src={BookImage} alt="Title" />
         <h3 className='card__title'>{title}</h3>
         <p className='card__author'>By: {author}</p>
       </div>
@@ -56,64 +56,6 @@ export default function ArchiveCard2 ({
           </div>
         </div>
       )}
-      <style jsx>{`
-        .popup {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.7);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .popup-inner {
-          background: #fff;
-          padding: 20px;
-          text-align: center;
-          max-width: 500px; 
-          width: 80%; 
-          position: relative;
-        }
-
-        .close-button {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 20px;
-          cursor: pointer;
-          border: none;
-          background: none;
-        }
-
-        .book-info {
-          text-align: left;
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .popup-left {
-          flex: 1;
-          text-align: left;
-        }
-
-        .popup-right {
-          flex: 1;
-          text-align: left;
-        }
-
-        .book-image {
-          max-width: 200px; 
-          height: auto;
-          margin-right: 10px;
-        }
-
-        .stars-feature {
-          margin-top: 10px;
-        }
-      `}</style>
     </div>
   );
 };

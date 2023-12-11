@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import BookImage from './pj3.jpg';
+import BookImage from './wk1.jpg';
 import Rating from '@mui/material/Rating';
 
-
-export default function ArchiveCard3 ({
+export default function Book1 ({
   book,
   title="",
   author=""
@@ -23,7 +22,7 @@ export default function ArchiveCard3 ({
     <div>
       {/* Book Card */}
       <div className='card__container' onClick={togglePopup}>
-      <img className="book-image" src={BookImage} alt="Title" />
+        <img className="book-image" src={BookImage} alt="Title" />
         <h3 className='card__title'>{title}</h3>
         <p className='card__author'>By: {author}</p>
       </div>
@@ -44,20 +43,18 @@ export default function ArchiveCard3 ({
               </div>
               <div className="popup-right">
                 <div className="info">
-                  <h2 style={{ margin: 0 }}>Percy Jackson: The Titan's Curse</h2>
-                  <p>Author: Rick Riordan</p>
+                  <h2 style={{ margin: 0 }}>Diary of a Wimpy Kid</h2>
+                  <p>Author: Jeff Kinney</p>
                   <p>
-                  When Percy Jackson gets an urgent distress call from his friend Grover, he immediately prepares for battle. He knows he will need his powerful demigod allies at his side, his trusty bronze sword Riptide, and… a ride from his mom.
-                  The demigods rush to the rescue to find that Grover has made an important discovery: two powerful half-bloods whose parentage is unknown. But that’s not all that awaits them. The titan lord Kronos has devised his most treacherous plot yet, and the young heroes have just fallen prey.
-                  They’re not the only ones in danger. 
+                  It’s a new school year, and Greg Heffley finds himself thrust into middle school, where undersized weaklings share the hallways with kids who are taller, meaner, and already shaving. The hazards of growing up before you’re ready are uniquely revealed through words and drawings as Greg records them in his diary.
                   </p>
                 </div>
               </div>
             </div>
-            <button onClick={togglePopup}>Move back to Library</button>
           </div>
         </div>
       )}
+      
     </div>
   );
 };
