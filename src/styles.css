@@ -6,6 +6,17 @@
   --raisin-black: #3a2d32;
   --white: #FFFFFF;
 }
+.archive__img {
+  width: 200px;
+  height: 275px;
+  background-color: var(--van-dyke);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
 
 body {
   margin: 0;
@@ -44,6 +55,8 @@ body {
   flex-direction: column;
   transition: 200ms;
   height: 350px;
+  width: 200px;
+  padding-left: 50px;
 }
 
 .card__container:hover {
@@ -75,7 +88,7 @@ body {
 
 .card__title {
   color: var(--khaki);
-  margin-top: 0;
+  margin-top: 10px;
   width: 100%;
 }
 

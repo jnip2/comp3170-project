@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import BookImage from './pj3.jpg';
+import BookImage from './wk2.jpg';
 import Rating from '@mui/material/Rating';
 
 
-export default function ArchiveCard3 ({
+export default function Book2({
   book,
-  title="",
-  author=""
+  title = "",
+  author = ""
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(1);
@@ -23,7 +23,7 @@ export default function ArchiveCard3 ({
     <div>
       {/* Book Card */}
       <div className='card__container' onClick={togglePopup}>
-      <img className="book-image" src={BookImage} alt="Title" />
+        <img className="book-image" src={BookImage} alt="Title" />
         <h3 className='card__title'>{title}</h3>
         <p className='card__author'>By: {author}</p>
       </div>
@@ -44,20 +44,22 @@ export default function ArchiveCard3 ({
               </div>
               <div className="popup-right">
                 <div className="info">
-                  <h2 style={{ margin: 0 }}>Percy Jackson: The Titan's Curse</h2>
-                  <p>Author: Rick Riordan</p>
+                  <h2 style={{ margin: 0 }}>Diary of a Wimpy Kid: Rodrick Rules</h2>
+                  <p>Author: Jeff Kinney</p>
                   <p>
-                  When Percy Jackson gets an urgent distress call from his friend Grover, he immediately prepares for battle. He knows he will need his powerful demigod allies at his side, his trusty bronze sword Riptide, and… a ride from his mom.
-                  The demigods rush to the rescue to find that Grover has made an important discovery: two powerful half-bloods whose parentage is unknown. But that’s not all that awaits them. The titan lord Kronos has devised his most treacherous plot yet, and the young heroes have just fallen prey.
-                  They’re not the only ones in danger. 
+                    As Greg enters the new school year, he’s eager to put the past three months behind him . . . and one event in particular.
+
+                    Unfortunately for Greg, his older brother, Rodrick, knows all about the incident Greg wants to keep under wraps. But secrets have a way of getting out . . . especially when a diary is involved.
+
+                    Diary of a Wimpy Kid: Rodrick Rules chronicles Greg’s attempts to navigate the hazards of middle school, impress the girls, steer clear of the school talent show, and most important, keep his secret safe.
                   </p>
                 </div>
               </div>
             </div>
-            <button onClick={togglePopup}>Move back to Library</button>
           </div>
         </div>
       )}
+
     </div>
   );
 };
