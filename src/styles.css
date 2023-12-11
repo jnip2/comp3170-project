@@ -28,8 +28,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  width: 1500px;
-  padding-bottom: 15px,
+  width: 900px;
 }
 
 .list__row {

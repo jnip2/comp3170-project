@@ -62,11 +62,7 @@ export default function AddBookPopUp({
                                     </label>
                                 </div>
                                 <div style={styles.buttonContainer}>
-<<<<<<< Updated upstream:src/components/AddBookPopUp/index.jsx
                                     <button type='submit' style={{ width: 285, height: 50 }}>Add to Library</button>
-=======
-                                    <button type='submit' style={{ width: 285, height: 50, borderRadius: 12, fontSize: 15 }}>{editing !== "new" ? "Update Book" : "Add to Library"}</button>
->>>>>>> Stashed changes:src/components/AddBookPopUp.jsx
                                 </div>
                             </form>
                         </div>
@@ -98,14 +94,10 @@ const styles = {
     inputContainer: {
         display: 'flex',
         flexDirection: 'column',
-        gap: 33,
-        marginLeft: 15,
-        fontSize: 18
+        gap: 33
     },
     inputBox: {
-        width: 399,
-        height: 35,
-        borderRadius: 5
+        width: 399
     },
     labelContainer: {
         display: 'flex',
@@ -121,7 +113,7 @@ const styles = {
     buttonContainer: {
         justifyContent: 'center',
         width: 734,
-        marginLeft: -26,
+        marginLeft: -26
     },
     popUpBg: {
         position: 'absolute',
