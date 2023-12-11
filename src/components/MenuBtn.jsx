@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';  // useNavigate replaces useHistory in v6
+import { useNavigate } from 'react-router-dom';  
 import '../styles.css';
 
 export default function MenuBtn() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const navigate = useNavigate(); // useNavigate replaces useHistory in v6
+  const navigate = useNavigate(); 
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
